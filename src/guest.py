@@ -20,18 +20,18 @@ class Guest:
         if self.guest_can_buy_drink and self.sufficient_funds(drink):
             self.wallet -= drink.price 
             self.drunkenness += drink.alcohol_level
-            if self.singing_ability == 0:
-                self.singing_ability
+            if self.singing_ability > 0:
+                self.singing_ability -= 1
             else:
-                self.singing_ability -= (drink.alcohol_level / 2) 
-            if self.munchies_level == 15:
-                self.munchies_level == self.munchies_level
+                self.singing_ability = 0 
+            if self.munchies_level < 15:
+                self.munchies_level += 1
             else:
-                self.munchies_level += (drink.alcohol_level / 2)
-            if self.drunkenness > 60:
-                self.happy_mood -= (drink.alcohol_level / 2)
-            else:
+                self.munchies_level = 15
+            if self.happy_mood <= (50 - (drink.alcohol_level)):
                 self.happy_mood += (drink.alcohol_level)
+            else:
+                self.happy_mood -= (drink.alcohol_level / 2)
 
     def buy_snack(self, snack):
         self.wallet -= snack.price 
@@ -48,14 +48,15 @@ class Guest:
         self.wallet -= room.entry_fee 
 
     def sing_song(self, song):
-        if self.happy_mood == 50:
-            self.happy_mood 
-        while self.happy_mood != 50:
-            if self.favourite_song == song.name:
+        if self.favourite_song == song.name:
+            if self.happy_mood <= 42:
                 self.happy_mood += 8
             else:
+                self.happy_mood = 50
+        else:
+            if self.happy_mood <= 46:
                 self.happy_mood += 4
-            break
+            else: self.happy_mood = 50
     
     def sees_favourite_song_in_playlist(self, room):
         for song in room.play_list:

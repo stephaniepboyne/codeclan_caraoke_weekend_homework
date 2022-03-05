@@ -9,14 +9,14 @@ class TestGuest(unittest.TestCase):
 
     def setUp(self):
         self.guest = Guest("Lucy", 25, 28.50, 5, 7, "Wouldn't It Be Nice", 0, 5)  
-        self.guest_2 = Guest("Henry", 36, 38.60, 65, 0, "Could You Be Loved", 15, 28)
+        self.guest_2 = Guest("Henry", 36, 38.60, 58, 0, "Could You Be Loved", 15, 45)
         self.guest_3 = Guest("Ula", 37, 5.20, 45, 0, "Over the Rainbow", 10, 50)
 
         self.drink = Drink("pina colada", 7, 5)
 
         self.snack = Snack("mixed nuts", 2.50, 1, 2)
 
-        self.room = Room(5, 4, 4)
+        self.room = Room(5, 4, 10)
 
         self.song = Song("Could You Be Loved", "Bob Marley")
         self.song_2 = Song("Wouldn't It Be Nice", "The Beach Boys")
@@ -72,12 +72,12 @@ class TestGuest(unittest.TestCase):
     def test_buy_drink__munchies_level_increases(self):
         self.guest.buy_drink(self.drink)
         result = self.guest.munchies_level
-        self.assertEqual(2.5, result)
+        self.assertEqual(1, result)
     
     def test_buy_drink__happy_mood_changes(self):
         self.guest_2.buy_drink(self.drink)
         result = self.guest_2.happy_mood 
-        self.assertEqual(25.5, result)
+        self.assertEqual(50, result)
     
     def test_buy_snack__munchies_level_decreases(self):
         self.guest.buy_snack(self.snack)
@@ -97,12 +97,12 @@ class TestGuest(unittest.TestCase):
     def test_check_into_room(self):
         self.guest.check_into_room(self.room)
         result = self.guest.wallet 
-        self.assertEqual(24.50, result)
+        self.assertEqual(18.50, result)
     
     def test_sing_favourite_song__happy_mood_increases(self):
         self.guest_2.sing_song(self.song)
         result = self.guest_2.happy_mood
-        self.assertEqual(36, result)
+        self.assertEqual(50, result)
     
     def test_sing_song__happy_mood_increases(self):
         self.guest.sing_song(self.song)
