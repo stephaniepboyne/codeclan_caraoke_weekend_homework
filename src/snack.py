@@ -5,5 +5,3 @@ class Snack:
         self.price = price 
         self.sobering_effect = sobering_effect
         self.satiety_effect = satiety_effect
-
-        

@@ -20,11 +20,3 @@ class Bar:
     
     def add_item_to_room_tab(self, room, item):
         room.room_tab += item.price 
-    
-    
-
-
-
-    
-
-            

@@ -70,21 +70,3 @@ class Guest:
             return "Sorry, you do not have sufficient funds."
         else:
             self.wallet -= room.room_tab 
-        
-
-
-
-    
-        
-
-    
-    
-        
-
-    
-
-
-
-        
-
-

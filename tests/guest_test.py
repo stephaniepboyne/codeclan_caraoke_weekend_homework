@@ -16,7 +16,7 @@ class TestGuest(unittest.TestCase):
 
         self.snack = Snack("mixed nuts", 2.50, 1, 2)
 
-        self.room = Room(5, 4, 10)
+        self.room = Room(5, 4, 10, "unoccupied")
 
         self.song = Song("Could You Be Loved", "Bob Marley")
         self.song_2 = Song("Wouldn't It Be Nice", "The Beach Boys")

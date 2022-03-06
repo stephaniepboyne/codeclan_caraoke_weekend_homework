@@ -21,7 +21,7 @@ class TestBar(unittest.TestCase):
         self.snack_2 = Snack("mixed nuts", 2.50, 1, 2)
         self.snack_3 = Snack("sweet potato fries", 5, 3, 7)
 
-        self.room = Room(2, 2, 5)
+        self.room = Room(2, 2, 5, "unoccupied")
 
     def test_bar_has_till(self):
         self.assertEqual(300, self.bar.till)
@@ -50,12 +50,3 @@ class TestBar(unittest.TestCase):
         self.bar.add_item_to_room_tab(self.room, self.snack)
         self.bar.add_item_to_room_tab(self.room, self.drink)
         self.assertEqual(11, self.room.room_tab)
-    
-    
-
-
-
-
-    
-
-
