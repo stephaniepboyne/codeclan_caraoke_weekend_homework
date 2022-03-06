@@ -5,4 +5,6 @@ class Room:
         self.capacity = capacity
         self.play_list = []
         self.entry_fee = entry_fee
-        
+        self.room_tab = 0 
+    
+    

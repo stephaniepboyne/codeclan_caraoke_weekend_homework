@@ -65,6 +65,16 @@ class Guest:
                 return "Woohoo!"
         return "Darn. My favourite song's not here."
     
+    def pay_room_tab__wallet_decreases(self, room):
+        if self.wallet < room.room_tab:
+            return "Sorry, you do not have sufficient funds."
+        else:
+            self.wallet -= room.room_tab 
+        
+
+
+
+    
         
 
     

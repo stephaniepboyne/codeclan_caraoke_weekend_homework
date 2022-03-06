@@ -123,3 +123,5 @@ class TestGuest(unittest.TestCase):
         self.guest.sees_favourite_song_in_playlist(self.room)
         self.assertEqual(9, self.guest.happy_mood)
         
+
+        
