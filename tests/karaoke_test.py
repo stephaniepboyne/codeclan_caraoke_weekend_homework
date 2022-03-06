@@ -48,6 +48,10 @@ class TestKaraoke(unittest.TestCase):
     def test_check_customer_in__till_increases(self):
         self.karaoke.check_in_guest([self.guest, self.guest_2, self.guest_3], self.room)
         self.assertEqual(210, self.karaoke.till) 
+    
+    def test_check_customer_in__room_status_changes(self):
+        self.karaoke.check_in_guest([self.guest, self.guest_2, self.guest_3], self.room)
+        self.assertEqual("occupied", self.room.room_status)
 
     def test_add_song_to_room_playlist(self):
         self.karaoke.add_song_to_room_playlist([self.song, self.song_2, self.song_3, self.song_4, self.song_5], self.room) 
