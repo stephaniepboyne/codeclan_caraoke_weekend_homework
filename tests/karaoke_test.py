@@ -58,7 +58,7 @@ class TestKaraoke(unittest.TestCase):
             "Is This Love": "Bob Marley",
             "Do You Realize??": "The Flaming Lips"}, self.room. play_list)
         
-    def test_check_customer_out__number_of_availavle_rooms_decreases(self):
+    def test_check_customer_out__number_of_availavle_rooms_increases(self):
         self.karaoke.check_out_guest(self.room)
         self.assertEqual(6, self.karaoke.number_of_available_rooms)
     
