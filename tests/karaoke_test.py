@@ -2,6 +2,7 @@ import unittest
 from src.karaoke import Karaoke 
 from src.guest import Guest
 from src.room import Room 
+from src.song import Song
 
 class TestKaraoke(unittest.TestCase):
 
@@ -17,6 +18,12 @@ class TestKaraoke(unittest.TestCase):
         self.room_3 = Room(3, 2, 5)
         self.room_4 = Room (4, 6, 15)
         self.room_5 = Room (5, 8, 20)
+
+        self.song = Song("Could You Be Loved", "Bob Marley")
+        self.song_2 = Song("Wouldn't It Be Nice", "The Beach Boys")
+        self.song_3 = Song("Over the Rainbow", "Israel Kamakawiwo'ole")
+        self.song_4 = Song("Is This Love", "Bob Marley")
+        self.song_5 = Song("Do You Realize??", "The Flaming Lips")
     
     def test_karaoke_has_name(self):
         self.assertEqual("The OO CodeClan Caraoke", self.karaoke.name)
@@ -42,5 +49,12 @@ class TestKaraoke(unittest.TestCase):
         self.karaoke.check_in_guest([self.guest, self.guest_2, self.guest_3], self.room)
         self.assertEqual(210, self.karaoke.till) 
 
-    
+    def test_add_song_to_room_playlist(self):
+        self.karaoke.add_song_to_room_playlist([self.song, self.song_2, self.song_3, self.song_4, self.song_5], self.room) 
+        self.assertEqual({
+            "Could You Be Loved": "Bob Marley", 
+            "Wouldn't It Be Nice": "The Beach Boys", 
+            "Over the Rainbow": "Israel Kamakawiwo'ole",
+            "Is This Love": "Bob Marley",
+            "Do You Realize??": "The Flaming Lips"}, self.room. play_list)
     

@@ -122,6 +122,13 @@ class TestGuest(unittest.TestCase):
         self.room.play_list = [self.song, self.song_2, self.song_3, self.song_4, self.song_5]
         self.guest.sees_favourite_song_in_playlist(self.room)
         self.assertEqual(9, self.guest.happy_mood)
-        
 
-        
+    def test_pay_room_tab__wallet_decreases(self):
+        self.room.room_tab = 20
+        self.guest.pay_room_tab(self.room)
+        self.assertEqual(8.50, self.guest.wallet)
+    
+    def test_pay_room_tab__insufficient_funds(self):
+        self.room.room_tab = 100
+        self.guest.pay_room_tab(self.room)
+        self.assertEqual("Sorry, you do not have sufficient funds.", self.guest.pay_room_tab(self.room))

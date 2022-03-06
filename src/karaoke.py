@@ -13,3 +13,7 @@ class Karaoke:
         if (self.number_of_available_rooms >= 1) and (self.room_big_enough(guests, room)): 
             self.number_of_available_rooms -= 1 
             self.till += room.entry_fee 
+    
+    def add_song_to_room_playlist(self, songs, room):
+        for song in songs:
+            room.play_list[song.name] = song.artist 

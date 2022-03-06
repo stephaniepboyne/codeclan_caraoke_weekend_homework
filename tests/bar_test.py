@@ -17,7 +17,7 @@ class TestBar(unittest.TestCase):
         self.drink_2 = Drink("spiced gold rum", 6, 5)
         self.drink_3 = Drink("red wine", 5, 3.5)
 
-        self.snack = Snack("pinapple fritters", 4, 2, 6)
+        self.snack = Snack("pineapple fritters", 4, 2, 6)
         self.snack_2 = Snack("mixed nuts", 2.50, 1, 2)
         self.snack_3 = Snack("sweet potato fries", 5, 3, 7)
 
@@ -44,7 +44,7 @@ class TestBar(unittest.TestCase):
         self.bar.add_snack_to_stock(self.snack, 20)
         self.bar.add_snack_to_stock(self.snack_2, 60)
         self.bar.add_snack_to_stock(self.snack_3, 30)
-        self.assertEqual({"pinapple fritters": 20, "mixed nuts": 60, "sweet potato fries": 30}, self.bar.snacks_stock)
+        self.assertEqual({"pineapple fritters": 20, "mixed nuts": 60, "sweet potato fries": 30}, self.bar.snacks_stock)
     
     def test_add_item_to_room_tab(self):
         self.bar.add_item_to_room_tab(self.room, self.snack)
